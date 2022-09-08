@@ -9,15 +9,84 @@
 
 #### 安装教程
 
-1.  xxxx
-2.  xxxx
-3.  xxxx
+1.  下载程序，将文件夹拖入到工程中
+2.  添加ZTools命名空间
 
 #### 使用说明
 
-1.  xxxx
-2.  xxxx
-3.  xxxx
+1.  首先在DataRequest.cs脚本中设置好自己需要的返回值公共的外部数据格式类型，主要的数据类型以泛型实现
+2.  设置Token：
+
+```
+HttpTool.Instance.Token = "123";
+```
+
+2.  设置超时时间：
+
+```
+HttpTool.Instance.TimeOut = 10;
+```
+
+3.  Get请求：
+
+```
+HttpTool.Instance.Get<请求的数据格式>("url", data =>
+{
+    Debug.Log("获得的数据列表：" + data.data);
+}, 是否需要token);
+```
+
+
+4.  Post请求：
+
+```
+HttpTool.Instance.Post<请求的数据格式>("url",
+new 
+{ 
+    参数
+}    
+,data =>
+{
+    Debug.Log("获得的数据列表：" + data.data);
+}, 是否需要token);
+```
+
+
+5.  Put请求：
+
+```
+HttpTool.Instance.Put<请求的数据格式>("url",
+new 
+{ 
+    参数
+}    
+,data =>
+{
+    Debug.Log("获得的数据列表：" + data.data);
+}, 是否需要token);
+```
+
+
+6.  下载资源（文件未建立）：
+
+```
+HttpTool.Instance.DownloadFile<请求的数据格式>("url","下载路径","文件名", float loadnum =>
+{
+    Debug.Log("下载进度：" + loadnum);
+}, 是否需要token);
+```
+
+
+7.  下载资源（文件已建立）：
+
+```
+HttpTool.Instance.DownloadFile<请求的数据格式>("url","文件下载路径", float loadnum =>
+{
+    Debug.Log("下载进度：" + loadnum);
+}, 是否需要token);
+```
+
+
 
 #### 参与贡献
 
