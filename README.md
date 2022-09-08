@@ -15,10 +15,14 @@
 
 #### 使用说明
 
-1.  HttpTool.Instance.Get<请求的数据格式>("url", data =>
+1.  
+```
+HttpTool.Instance.Get<请求的数据格式>("url", data =>
     {
         Debug.Log("获得的数据列表：" + data.data);
     });
+```
+
 2.  xxxx
 3.  xxxx
 
