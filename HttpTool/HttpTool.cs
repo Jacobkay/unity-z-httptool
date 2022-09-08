@@ -46,19 +46,15 @@ namespace ZTools
             set { timeOut = value; }
             get { return timeOut; }
         }
-        string Token = "";
+        string token = "";
+        public string Token
+        {
+            set { token = value; }
+            get { return token; }
+        }
         void Awake()
         {
             DontDestroyOnLoad(gameObject);
-        }
-
-        /// <summary>
-        /// 设置token
-        /// </summary>
-        /// <param name="token"></param>
-        public void SetHeader(string token)
-        {
-            Token = token;
         }
         /// <summary>
         /// GET请求
@@ -266,7 +262,7 @@ namespace ZTools
             webRequest.SetRequestHeader("Content-Type", "application/json");
             if (needToken)
             {
-                webRequest.SetRequestHeader("Authorization", Token);
+                webRequest.SetRequestHeader("Authorization", token);
             }
         }
     }
