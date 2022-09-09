@@ -6,7 +6,7 @@ namespace ZTools
     /// 自定义设置接口返回的公共格式
     /// </summary>
     /// <typeparam name="T"></typeparam>
-    public class ResponseResult1<T>
+    public class ResponseResult<T>
     {
         /// <summary>
         /// 状态码
